@@ -34,13 +34,29 @@ impl NeatPos {
         }
     }
 
-    fn is_before(&self, other: &NeatPos) -> bool {
-        self.level < other.level
+    fn is_before<T: Into<TypeLevel>>(
+        &self,
+        level: T,
+    ) -> bool {
+        self.level < level.into()
     }
-    fn is_after(&self, other: &NeatPos) -> bool {
-        self.level > other.level
+    fn is_after<T: Into<TypeLevel>>(
+        &self,
+        level: T
+    ) -> bool {
+        self.level > level.into()
     }
-    fn is_same_level(&self, other: &NeatPos) -> bool {
-        self.level == other.level
+    fn is_same_level<T: Into<TypeLevel>> (
+        &self,
+        level: T
+    ) -> bool {
+        self.level == level
+    }
+}
+
+
+impl From<NeatPos> for TypeLevel {
+    fn from(pos: NeatPos) -> Self {
+        pos.level
     }
 }
