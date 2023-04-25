@@ -1,0 +1,6 @@
+[package]
+name = "makr_neat"
+version = "2023.4.25"
+authors = ["makpia"]
+description = "rust version of mak_neat, an implementation of NEAT algorithm"
+license = "GPL-3.0"
