@@ -1,4 +1,4 @@
 
 # makr_neat
 
-a rust version of mak_neat no id version
+a rust implementation of a NEAT algorithm variant
