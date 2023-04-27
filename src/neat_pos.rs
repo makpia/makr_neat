@@ -1,5 +1,4 @@
 // todo: find the fastest type for this
-
 #[allow(non_camel_case_types)]
 pub type type_level = u32;
 #[allow(non_camel_case_types)]

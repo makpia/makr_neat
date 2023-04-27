@@ -1,18 +1,8 @@
 max_width = 80
 
-# Ideal width of each line.
-# Default: 80
-#   max_width = 80
+fn_args_layout = "Vertical"
+imports_layout = "Vertical"
 
-# Maximum width of the args of a function call before
-# falling back to vertical formatting.
-# Default: 60
-#   fn_call_width =
+struct_lit_width = 5
 
-# Maximum width in the body of a struct lit before falling back to vertical formatting.
-# Default: 16
-#   struct_lit_width =
-
-# Maximum width in the body of a struct variant before falling back to vertical formatting.
-# Default: 35
-#   struct_variant_width =
+blank_lines_upper_bound = 2
