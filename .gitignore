@@ -1,0 +1,13 @@
+
+
+*.o
+*.so
+*.rlib
+*.dll
+
+*.exe
+
+debug/
+target/
+
+Cargo.lock
