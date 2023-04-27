@@ -1,52 +1,56 @@
 // todo: find the fastest type for this
-pub type TypeLevel = u32;
-pub type TypeOffset = u32;
+
+#[allow(non_camel_case_types)]
+pub type type_level = u32;
+#[allow(non_camel_case_types)]
+pub type type_offset = u32;
 
 
+#[allow(non_camel_case_types)]
 #[derive(Copy, Clone, Debug)]
-pub struct NeatPos {
-    pub level: TypeLevel,
-    pub offset: TypeOffset,
+pub struct neat_pos {
+    pub level: type_level,
+    pub offset: type_offset,
 }
 
 
-impl NeatPos {
+impl neat_pos {
     pub fn is_output(&self) -> bool {
-        self.level == TypeLevel::MAX
+        self.level == type_level::MAX
     }
     pub fn is_input(&self) -> bool {
         self.level == 0
     }
     pub fn is_hidden(&self) -> bool {
-        0 < self.level && self.level < TypeLevel::MAX
+        0 < self.level && self.level < type_level::MAX
     }
 
-    pub fn output_pos(offset: u32) -> NeatPos {
-        NeatPos {
-            level: TypeLevel::MAX,
+    pub fn output_pos(offset: u32) -> neat_pos {
+        neat_pos {
+            level: type_level::MAX,
             offset,
         }
     }
-    pub fn input_pos(offset: u32) -> NeatPos {
-        NeatPos {
+    pub fn input_pos(offset: u32) -> neat_pos {
+        neat_pos {
             level: 0,
             offset,
         }
     }
 
-    pub fn is_before<T: Into<TypeLevel>>(
+    pub fn is_before<T: Into<type_level>>(
         &self,
         level: T,
     ) -> bool {
         self.level < level.into()
     }
-    pub fn is_after<T: Into<TypeLevel>>(
+    pub fn is_after<T: Into<type_level>>(
         &self,
         level: T,
     ) -> bool {
         self.level > level.into()
     }
-    pub fn is_same_level<T: Into<TypeLevel>>(
+    pub fn is_same_level<T: Into<type_level>>(
         &self,
         level: T,
     ) -> bool {
@@ -55,8 +59,8 @@ impl NeatPos {
 }
 
 
-impl From<NeatPos> for TypeLevel {
-    fn from(pos: NeatPos) -> Self {
+impl From<neat_pos> for type_level {
+    fn from(pos: neat_pos) -> Self {
         pos.level
     }
 }
