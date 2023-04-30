@@ -1,6 +1,6 @@
 max_width = 80
 
-fn_args_layout = "Vertical"
+fn_params_layout = "Vertical"
 imports_layout = "Vertical"
 
 struct_lit_width = 5
