@@ -4,3 +4,6 @@ version = "2023.4.25"
 authors = ["makpia"]
 description = "a rust implementation of a NEAT algorithm variant"
 license = "GPL-3.0"
+
+[dependencies]
+rand = "0.8.5"

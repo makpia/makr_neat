@@ -1,11 +1,8 @@
 // todo: find the fastest type for this
-#[allow(non_camel_case_types)]
 pub type type_level = u32;
-#[allow(non_camel_case_types)]
 pub type type_offset = u32;
 
 
-#[allow(non_camel_case_types)]
 #[derive(Copy, Clone, Debug)]
 pub struct neat_pos {
     pub level: type_level,
