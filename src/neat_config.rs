@@ -8,6 +8,13 @@ pub struct neat_chromosome_config {
 
     pub connection_initialize_weight_mean: f64,
     pub connection_initialize_weight_std: f64,
+
+    pub node_diff_different_af: f64,
+    pub node_diff_different_pos_from: f64,
+
+    pub node_diff_weight_af: f64,
+    pub node_diff_weight_bias: f64,
+    pub node_diff_weight_connections: f64,
 }
 
 
@@ -19,6 +26,13 @@ impl Default for neat_chromosome_config {
 
             connection_initialize_weight_mean: 0.0,
             connection_initialize_weight_std: 1.0,
+
+            node_diff_different_af: 10.0,
+            node_diff_different_pos_from: 5.0,
+
+            node_diff_weight_af: 1.0,
+            node_diff_weight_bias: 1.0,
+            node_diff_weight_connections: 3.0,
         }
     }
 }

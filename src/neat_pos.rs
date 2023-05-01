@@ -3,7 +3,7 @@ pub type type_level = u32;
 pub type type_offset = u32;
 
 
-#[derive(Copy, Clone, Debug, PartialEq)]
+#[derive(Copy, Clone, Debug, Eq, Hash)]
 pub struct neat_pos {
     pub level: type_level,
     pub offset: type_offset,
