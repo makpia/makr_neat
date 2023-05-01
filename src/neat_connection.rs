@@ -10,22 +10,22 @@ pub struct neat_connection {
 
 impl neat_connection {
     pub fn diff(
-        conn1: neat_connection,
-        conn2: neat_connection,
+        &conn1: neat_connection,
+        &conn2: neat_connection,
     ) -> f64 {
         (conn1.weight - conn2.weight).abs()
     }
 
     pub fn diff_squared(
-        conn1: neat_connection,
-        conn2: neat_connection,
+        &conn1: neat_connection,
+        &conn2: neat_connection,
     ) -> f64 {
         (conn1.weight - conn2.weight).powi(2)
     }
 
     pub fn weight_range_limit(
         &mut self,
-        config: neat_chromosome_config,
+        &config: neat_chromosome_config,
     ) {
         self.weight = range_limit(
             self.weight,
@@ -34,8 +34,8 @@ impl neat_connection {
         );
     }
     pub fn initialize_random(
-        pos_from: neat_pos,
-        config: neat_chromosome_config,
+        &pos_from: neat_pos,
+        &config: neat_chromosome_config,
     ) -> neat_connection {
         neat_connection {
             pos_from,

@@ -30,7 +30,7 @@ impl neat_node {
     fn _connections_diff(
         node1: &neat_node,
         node2: &neat_node,
-        config: neat_chromosome_config,
+        config: &neat_chromosome_config,
     ) -> f64 {
         let node1_pos_set: HashSet<neat_pos> = node1.connections.keys().into();
         let node2_pos_set: HashSet<neat_pos> = node2.connections.keys().into();
@@ -59,12 +59,12 @@ impl neat_node {
     pub fn diff(
         node1: &neat_node,
         node2: &neat_node,
-        config: neat_chromosome_config,
+        config: &neat_chromosome_config,
     ) -> f64 {
         let af_diff = if node1.activation_func == node2.activation_func {
             0.0
         } else {
-            config.node_diff_different_af.clone()
+            config.node_diff_different_af
         };
 
         let bias_diff = (node1.bias - node2.bias).abs();
@@ -75,9 +75,9 @@ impl neat_node {
         apply_weight(
             &[af_diff, bias_diff, connections_diff],
             &[
-                config.node_diff_weight_af.clone(),
-                config.node_diff_weight_bias.clone(),
-                config.node_diff_weight_connections.clone(),
+                config.node_diff_weight_af,
+                config.node_diff_weight_bias,
+                config.node_diff_weight_connections,
             ],
         )
     }

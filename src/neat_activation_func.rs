@@ -34,7 +34,7 @@ mod _af {
 
 
 pub fn neat_activation_func_calculate(
-    func: neat_activation_func_types,
+    &func: neat_activation_func_types,
     x: f64,
 ) -> f64 {
     match func {
