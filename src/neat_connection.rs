@@ -3,7 +3,7 @@ use crate::neat_pos::neat_pos;
 use crate::utils::range_limit;
 
 #[derive(Copy, Clone, Debug)]
-struct neat_connection {
+pub struct neat_connection {
     pub pos_from: neat_pos,
     pub weight: f64,
 }
